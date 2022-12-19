@@ -1,0 +1,38 @@
+timestamp: 2022-12-16T14:05:11.348061
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) UNIQUE,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2022-12-16T14:05:11.351591
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tagpath" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE ON UPDATE CASCADE  
+);
+success!
+timestamp: 2022-12-16T15:06:38.164788
+CREATE TABLE "tijdlijn"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "type" CHAR(512),
+    "titel" CHAR(512),
+    "datum" DATE,
+    "auteur" CHAR(512),
+    "url" CHAR(512)
+);
+success!
+timestamp: 2022-12-16T15:48:15.979780
+CREATE TABLE "types"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "naam" CHAR(512)
+);
+success!
+success!

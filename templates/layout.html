@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="[[=URL('static')]]/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAAQEAAAEAIAAwAAAAFgAAACgAAAABAAAAAgAAAAEAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAA=="/>
+
+    <!-- Mike -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="icon" type="image/svg+xml" href="[[=URL('static/images/favicon.svg')]]">
+    <link rel="icon" type="image/png" href="[[=URL('static/images/favicon.png')]]">
+    <link rel="apple-touch-icon" sizes="180x180" href="[[=URL('static/images/apple-touch-icon.png')]]">
+    <link rel="icon" type="image/png" sizes="32x32" href="[[=URL('static/images/favicon-32x32.png')]]">
+    <link rel="icon" type="image/png" sizes="16x16" href="[[=URL('static/images/favicon-16x16.png')]]">
+    <link rel="manifest" href="[[=URL('static/images/site.webmanifest')]]">
+    <link rel="mask-icon" href="[[=URL('static/images/safari-pinned-tab.svg')]]" color="#ff714f">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ff714f">
+    <style>
+        :root {
+            --bs-font-sans-serif: "Proxima Nova", sans-serif;
+        }
+
+        html, body, a, button, p, h1, h2, h3, h4, h5 {
+            font-family: "Proxima Nova", sans-serif;
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 400;
+            src: url('/assets/fonts/ProximaNova-Regular.woff2') format('woff2');
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        .text-yellow {
+            color: #ffcc63 !important;
+        }
+
+        .text-primary, a {
+            color: #ff714f !important;
+        }
+
+        .border-primary {
+            border-color: #ff714f !important;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: brightness(1000);
+        }
+
+        .bg-secondary {
+            background-color: #ffcc63 !important;
+        }
+
+        .accordion {
+            --bs-accordion-inner-border-radius: 0rem;
+            --bs-accordion-border-width: 0.25rem;
+            --bs-accordion-active-bg: transparent;
+            --bs-accordion-border-color: #ffcc63;
+            --bs-accordion-active-color: #212529;
+            --bs-accordion-active-bg: #ffcc63;
+        }
+
+        .bg-dark.outlined.active {
+            background-color: #212529 !important;
+            color: #fff !important;
+        }
+
+        .bg-dark.outlined {
+            border-color: #212529 !important;
+            border-width: 0.25rem !important;
+            border-style: solid;
+            color: #212529;
+            background-color: transparent !important;
+        }
+
+        .text-dark {
+            color: #212529 !important;
+        }
+
+        .bg-dark {
+            background-color: #212529;
+            color: #fff;
+        }
+
+        .bg-primary, .btn-primary {
+            background-color: #ff714f !important;
+            color: #fff !important;
+            border-color: #ff714f !important;
+        }
+
+        .btn-outline-secondary {
+            border-color: #ffcc63 !important;
+            color: #ffcc63 !important;
+            background-color: transparent !important;
+        }
+
+
+        .main-title {
+            margin-bottom: 30px;
+
+            font-size: 45px;
+            font-weight: bold;
+            color: var(--color-third);
+        }
+
+        .main-title.-second {
+            color: var(--color-first);
+        }
+
+        .main-carousel {
+            position: relative;
+
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 55px;
+        }
+
+        .main-carousel::after {
+            position: absolute;
+            left: 50px;
+            top: 52px;
+
+            display: block;
+            width: calc(100% - 100px);
+            height: 6px;
+
+            content: '';
+            background-color: #000;
+        }
+
+        .main-carousel::before {
+            position: absolute;
+            left: 0;
+            top: 52px;
+
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+
+            content: '';
+            border: 3px dashed var(--color-black);
+        }
+
+
+        .button-arrow:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* Hide the content for acessibility. */
+        .button-arrow .content {
+            display: none;
+        }
+
+        .main-carousel .items {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .main-carousel .cards {
+            display: flex;
+            justify-content: space-between;
+
+            transition: transform 300ms ease-in-out;
+        }
+
+        .node-card {
+            position: relative;
+
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .node-card::before {
+            position: absolute;
+            bottom: 140px;
+
+            width: 40px;
+            height: 0;
+            box-sizing: border-box;
+
+            content: '';
+            border: 2px dashed var(--color-black);
+
+            transform: rotate(90deg) translateX(-50%);
+        }
+
+        .node-card .main-title {
+            margin-bottom: 50px;
+        }
+
+        .node-card .logo {
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 140px;
+
+            background-color: var(--color-fourth);
+            border: 5px solid var(--color-black);
+        }
+
+        .logo.-no-padding {
+            padding: 0;
+        }
+
+        .logo.-no-padding .image {
+            height: 130px;
+        }
+
+        .logo.-bg-red {
+            background-color: var(--color-first);
+        }
+
+        .diamond-narrow {
+            width: 0;
+            height: 0;
+            border: 0.8rem solid transparent;
+            border-bottom: 1rem solid #ffcc63;
+            position: relative;
+            top: 0.2rem;
+            display: flex;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .diamond-narrow:after {
+            content: '';
+            position: absolute;
+            left: -0.78rem;
+            top: 1rem;
+            width: 0;
+            height: 0;
+            border: 0.8rem solid transparent;
+            border-top: 1rem solid #ffcc63;
+        }
+
+        .diamond-wide {
+            width: 0;
+            height: 0;
+            border: 1.5rem solid transparent;
+            border-bottom: 1rem solid #212529;
+            position: relative;
+            top: 0rem;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .jaar {
+            border-color: #ffcc63 !important;
+            font-weight: bold;
+        }
+        .icon[data-type="twitter"] {
+            content: url("[[=URL('static/images/twitter.svg')]]");
+            width: 100%;
+            height: 100%;
+        }
+        .icon[data-type="facebook"] {
+            content: url("[[=URL('static/images/facebook.svg')]]");
+            width: 100%;
+            height: 100%;
+        }
+        .icon[data-type="wetenschap"] {
+            content: url("[[=URL('static/images/wetenschap.svg')]]");
+            width: 100%;
+            height: 100%;
+        }
+        .icon[data-type="artikel"] {
+            content: url("[[=URL('static/images/artikel.svg')]]");
+            width: 100%;
+            height: 100%;
+        }
+        .icon[data-type="website"] {
+            content: url("[[=URL('static/images/website.svg')]]");
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+    <!-- END -->
+
+    <style>.py4web-validation-error{margin-top:-16px; font-size:0.8em;color:red}</style>
+    [[block page_head]]<!-- individual pages can customize header here -->[[end]]
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="[[=URL('index')]]">
+            <img src="[[=URL('static/images/logo.svg')]]" alt="{{@site.title}}" width="auto" height="75"
+                 class="d-inline-block mx-4 mt-4" style="filter: brightness(1000);">
+        </a>
+    </div>
+</nav>
+    <!-- beginning of HTML inserted by extending template -->
+
+
+        <!-- Flash alert messages, first optional one in data-alert -->
+        <flash-alerts class="padded" data-alert="[[=globals().get('flash','')]]"></flash-alerts>
+
+      <main>
+        <!-- contect injected by extending page -->
+        [[include]]
+      </main>
+
+    <!-- end of HTML inserted by extending template -->
+    <div class="p-5 bg-dark">
+    <a href="/avg" class="text-white">
+        Privacy & cookiebeleid (AVG)
+    </a>
+</div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+
+    const rightButton = document.querySelector('.button-right');
+    const leftButton = document.querySelector('.button-left');
+    const cards = document.querySelector('.cards');
+    let totalPixels = 0;
+
+    function moveToRight() {
+        totalPixels -= 25;
+        cards.style.transform = `translateX(${totalPixels}%)`;
+    }
+
+    function moveToLeft() {
+        totalPixels += 25;
+        cards.style.transform = `translateX(${totalPixels}%)`;
+    }
+
+    rightButton.addEventListener('click', moveToRight);
+
+    leftButton.addEventListener('click', moveToLeft);
+
+    document.addEventListener('keyup', event => {
+        const key = event.key;
+
+        if (key === 'ArrowRight') {
+            moveToRight();
+        }
+
+        if (key === 'ArrowLeft') {
+            moveToLeft();
+        }
+    });
+
+</script>
+  <!-- You've gotta have utils.js -->
+  <script src="js/utils.js"></script>
+  [[block page_scripts]]<!-- individual pages can add scripts here -->[[end]]
+</html>

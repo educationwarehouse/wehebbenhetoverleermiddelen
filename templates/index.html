@@ -1,0 +1,263 @@
+[[extend 'layout.html']]
+
+<div class="p-5 bg-white">
+    <div class="row justify-content-between p-md-5">
+        <div class="col-md-6">
+            <h1>We hebben het over leermiddelen</h1>
+            <p class="py-3">
+                De grote verantwoordelijkheid die lerarenteams dragen voor de toekomst van onze samenleving vereist en
+                verdient de best mogelijke ondersteuning. Ze moeten op ieder moment kunnen werken met kwalitatief
+                hoogwaardige leermiddelen die aansluiten bij de behoeften, flexibel inzetbaar zijn voor een eerlijke
+                prijs. Op dit moment falen we als sector om daarin te voorzien. Dat moet en kan anders.
+            </p>
+            <div class="d-flex flex-column">
+                <a class="btn btn-primary m-3 px-4 py-2 rounded-5" href="{{asset " Plan leermiddelenplatform.pdf"}}">Bekijk
+                het plan</a>
+                <a class="btn btn-primary m-3 px-4 py-2 rounded-5" href="{{asset " Samenvatting onafhankelijk
+                   leermiddelenplatform.pdf"}}">Bekijk de samenvatting</a>
+                <a class="btn btn-outline-secondary m-3 px-4 py-2 rounded-5" target="_blank"
+                   href="https://projects.invisionapp.com/share/T412PTVANF6B#/screens/467265099?browse">Bekijk de
+                    voorlopige ontwerpen</a>
+            </div>
+        </div>
+        <div class="col-md-5 pt-5 pt-md-0">
+            <img src="[[=URL('static/images/images/header.png')]]" class="img-fluid" alt="Voorbeeld van het nieuwe leermiddelen platform">
+        </div>
+    </div>
+</div>
+<!--<div class="p-5 bg-white" style="background-image: url('{{asset "images/circles-half.png"}}'); background-position: top center; background-size: cover;">
+    <div class="row py-5 align-items-center justify-content-center">
+        <div class="col-md-6 text-center">
+            <p class="py-3 lead">
+                Het platform dat we ontwikkelen met scholen en aanbieders is een belangrijke schakel, maar de oplossing
+                vereist gecoördineerde actie van diverse partijen op diverse vlakken.
+                <br><br>
+                Dat begint met het open gesprek. Doel daarbij is te komen tot een overeenkomstig beeld van het probleem
+                en het benoemen van de acties die eenieder van de betrokken partijen moet ondernemen om samen de
+                marktwerking te herstellen.
+            </p>
+        </div>
+    </div>
+</div>-->
+<ul>
+[[for item in tijdlijn:]]
+    <li>[[=item.titel]]
+        <ul>
+            <li>[[=item.type]]</li>
+            <li>[[=item.datum]]</li>
+            <li><a href="[[=item.url]]" target="_blank">[[=item.url]]</a></li>
+        </ul>
+    </li>
+[[pass]]
+</ul>
+<div class="px-3 py-5 px-md-5 bg-primary">
+    <h1 class="text-dark text-center pb-5">Discussie tijdlijn</h1>
+    <div class="row">
+        <div class="col-1">
+            <button class="btn p-0 d-flex button-left h-100">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 100%; height: 100%;">
+                    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="col-10" style="overflow: hidden;">
+            <div class="row text-center cards flex-nowrap">
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">jan 2022
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 " style="transform: translateX(calc(-50% + 0.8rem));">
+                        <div style="transform: translateX(calc(3.33%*1));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>01.01.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="facebook"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*5));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>05.01.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="twitter"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*15));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>15.01.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="wetenschap"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*22));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>22.01.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="artikel"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*30));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>30.01.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="facebook"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">feb 2022
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 " style="transform: translateX(calc(-50% + 0.8rem));">
+                        <div style="transform: translateX(calc(3.33%*1));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>01.02.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="website"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*5));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>05.02.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="twitter"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*15));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>15.02.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="wetenschap"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*22));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>22.02.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="artikel"></span></div>
+                            </div>
+                        </div>
+                        <div style="transform: translateX(calc(3.33%*30));">
+                            <div class="diamond-wide"></div>
+                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
+                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <div class="text-primary mt-4 w-75">
+                                    <time>30.02.22</time>
+                                    <span> - Jantinus Jansen</span>
+                                </div>
+                                <div class="bg-dark position-absolute end-0 bottom-0"
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="facebook"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">maa 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 " style="transform: translateX(calc(-50% + 0.8rem));">
+
+                    </div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">jun 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">jul 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">aug 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">sep 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">nov 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
+
+                </div>
+                <div class="col-6 col-lg-3 px-0">
+                    <div class="border-bottom border-5 position-relative jaar">dec 2023
+                        <div class="diamond-narrow"></div>
+                    </div>
+                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
+
+                </div>
+            </div>
+            <div class="row" style="min-height: 10rem;"></div>
+        </div>
+        <div class="col-1">
+            <button class="btn p-0 d-flex button-right h-100">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 100%; height: 100%;">
+                    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
