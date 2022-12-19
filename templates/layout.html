@@ -6,8 +6,10 @@
     <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAAQEAAAEAIAAwAAAAFgAAACgAAAABAAAAAgAAAAEAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAA=="/>
 
     <!-- Mike -->
+       <link rel="stylesheet" href="css/no.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
     <link rel="icon" type="image/svg+xml" href="[[=URL('static/images/favicon.svg')]]">
     <link rel="icon" type="image/png" href="[[=URL('static/images/favicon.png')]]">
     <link rel="apple-touch-icon" sizes="180x180" href="[[=URL('static/images/apple-touch-icon.png')]]">
@@ -295,19 +297,25 @@
     [[block page_head]]<!-- individual pages can customize header here -->[[end]]
   </head>
   <body>
-    <nav class="navbar navbar-light bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="[[=URL('index')]]">
-            <img src="[[=URL('static/images/logo.svg')]]" alt="{{@site.title}}" width="auto" height="75"
-                 class="d-inline-block mx-4 mt-4" style="filter: brightness(1000);">
-        </a>
-    </div>
-</nav>
+  <nav class="navbar navbar-light bg-dark" style="height: 100%; width: 100vw">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="[[=URL('index')]]">
+              <img src="[[=URL('static/images/logo.svg')]]" alt="{{@site.title}}" width="auto" height="75"
+                   class="d-inline-block mx-4" style="filter: brightness(1000);">
+          </a>
+
+          <ul class="navbar-nav">
+              [[if globals().get('user'):]]
+              <li><a class="dropdown-item" href="[[=URL('auth/logout')]]">Logout</a></li>
+              [[pass]]
+          </ul>
+      </div>
+  </nav>
     <!-- beginning of HTML inserted by extending template -->
 
 
         <!-- Flash alert messages, first optional one in data-alert -->
-        <flash-alerts class="padded" data-alert="[[=globals().get('flash','')]]"></flash-alerts>
+        <flash-alerts class="padded position-absolute top-0 end-0" data-alert="[[=globals().get('flash','')]]"></flash-alerts>
 
       <main>
         <!-- contect injected by extending page -->

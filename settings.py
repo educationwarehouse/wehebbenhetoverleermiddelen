@@ -41,7 +41,7 @@ LOGIN_AFTER_REGISTRATION = False
 #  "change_password", "change_email", "profile", "config", "register",
 #  "verify_email", "unsubscribe"]
 # Note: if you add "login", add also "logout"
-ALLOWED_ACTIONS = ["all"]
+ALLOWED_ACTIONS = ["login", "logout"]
 
 # email settings
 SMTP_SSL = False
