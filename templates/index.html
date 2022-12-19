@@ -11,9 +11,9 @@
                 prijs. Op dit moment falen we als sector om daarin te voorzien. Dat moet en kan anders.
             </p>
             <div class="d-flex flex-column">
-                <a class="btn btn-primary m-3 px-4 py-2 rounded-5" href="{{asset " Plan leermiddelenplatform.pdf"}}">Bekijk
-                het plan</a>
-                <a class="btn btn-primary m-3 px-4 py-2 rounded-5" href="{{asset " Samenvatting onafhankelijk
+                <a class="btn btn-primary m-3 px-4 py-2 rounded-5" href="{{ asset " Plan leermiddelenplatform.pdf"}}">Bekijk
+                    het plan</a>
+                <a class="btn btn-primary m-3 px-4 py-2 rounded-5" href="{{ asset " Samenvatting onafhankelijk
                    leermiddelenplatform.pdf"}}">Bekijk de samenvatting</a>
                 <a class="btn btn-outline-secondary m-3 px-4 py-2 rounded-5" target="_blank"
                    href="https://projects.invisionapp.com/share/T412PTVANF6B#/screens/467265099?browse">Bekijk de
@@ -21,7 +21,8 @@
             </div>
         </div>
         <div class="col-md-5 pt-5 pt-md-0">
-            <img src="[[=URL('static/images/images/header.png')]]" class="img-fluid" alt="Voorbeeld van het nieuwe leermiddelen platform">
+            <img src="[[=URL('static/images/images/header.png')]]" class="img-fluid"
+                 alt="Voorbeeld van het nieuwe leermiddelen platform">
         </div>
     </div>
 </div>
@@ -39,17 +40,7 @@
         </div>
     </div>
 </div>-->
-<ul>
-[[for item in tijdlijn:]]
-    <li>[[=item.titel]]
-        <ul>
-            <li>[[=item.type]]</li>
-            <li>[[=item.datum]]</li>
-            <li><a href="[[=item.url]]" target="_blank">[[=item.url]]</a></li>
-        </ul>
-    </li>
-[[pass]]
-</ul>
+
 <div class="px-3 py-5 px-md-5 bg-primary">
     <h1 class="text-dark text-center pb-5">Discussie tijdlijn</h1>
     <div class="row">
@@ -62,193 +53,36 @@
         </div>
         <div class="col-10" style="overflow: hidden;">
             <div class="row text-center cards flex-nowrap">
+
+                [[for month in months:]]
                 <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">jan 2022
+                    <div class="border-bottom border-5 position-relative jaar">[[=month.description]]
                         <div class="diamond-narrow"></div>
                     </div>
                     <div class="mt-5 " style="transform: translateX(calc(-50% + 0.8rem));">
-                        <div style="transform: translateX(calc(3.33%*1));">
+                        [[for idx, item in enumerate(month.items):]]
+
+                        [[transform = f"3.33%*{2*idx}"]]
+
+
+                        <div style="transform: translateX(calc([[=transform]]));">
                             <div class="diamond-wide"></div>
                             <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
+                                <h6 class="fw-bold">[[=item['titel']]]</h6>
                                 <div class="text-primary mt-4 w-75">
-                                    <time>01.01.22</time>
-                                    <span> - Jantinus Jansen</span>
+                                    <time>[[=item['datum']]]</time>
+                                    <span> - [[=item['auteur']]]</span>
                                 </div>
                                 <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="facebook"></span></div>
+                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span
+                                        class="icon p-2" data-type="[[=item['type']]]"></span></div>
                             </div>
                         </div>
-                        <div style="transform: translateX(calc(3.33%*5));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>05.01.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="twitter"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*15));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>15.01.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="wetenschap"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*22));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>22.01.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="artikel"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*30));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>30.01.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="facebook"></span></div>
-                            </div>
-                        </div>
+                        [[pass]]
                     </div>
 
                 </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">feb 2022
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 " style="transform: translateX(calc(-50% + 0.8rem));">
-                        <div style="transform: translateX(calc(3.33%*1));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>01.02.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="website"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*5));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>05.02.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="twitter"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*15));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>15.02.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="wetenschap"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*22));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>22.02.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="artikel"></span></div>
-                            </div>
-                        </div>
-                        <div style="transform: translateX(calc(3.33%*30));">
-                            <div class="diamond-wide"></div>
-                            <div class="bg-white rounded border border-3 border-dark text-dark p-3 text-start position-relative mx-4">
-                                <h6 class="fw-bold">Facebookdiscussie over de aanschaf van leermiddelen</h6>
-                                <div class="text-primary mt-4 w-75">
-                                    <time>30.02.22</time>
-                                    <span> - Jantinus Jansen</span>
-                                </div>
-                                <div class="bg-dark position-absolute end-0 bottom-0"
-                                     style="width: 2.5rem; height: 2.75rem; border-top-left-radius: 0.75rem;"><span class="icon p-2" data-type="facebook"></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">maa 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 " style="transform: translateX(calc(-50% + 0.8rem));">
-
-                    </div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">jun 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">jul 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">aug 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">sep 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">nov 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
-
-                </div>
-                <div class="col-6 col-lg-3 px-0">
-                    <div class="border-bottom border-5 position-relative jaar">dec 2023
-                        <div class="diamond-narrow"></div>
-                    </div>
-                    <div class="mt-5 px-3" style="min-height: 10rem"></div>
-
-                </div>
+                [[pass]]
             </div>
             <div class="row" style="min-height: 10rem;"></div>
         </div>
