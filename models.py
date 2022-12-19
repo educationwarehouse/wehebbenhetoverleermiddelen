@@ -93,7 +93,7 @@ def months_that_have_items() -> list[MonthInfo]:
 
     in the form of a MonthInfo instance
     """
-    query = db.tijdlijn
+    query = (db.tijdlijn.datum != None)
 
     year = db.tijdlijn.datum.year()
     month = db.tijdlijn.datum.month()
